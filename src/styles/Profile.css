@@ -23,3 +23,11 @@
 .profile-entry-right {
     text-align: right;
 }
+
+.profile-pic {
+    width: 100%;
+}
+
+.team-logo {
+    width: 50%;
+}
