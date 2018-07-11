@@ -4,7 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+@import '~antd/dist/antd.css';
 @import "App.css";
 @import "TopNavBar.css";
 @import "Main.css";
 @import "Profile.css";
+@import "DataViewContainer.css";
+@import "ShotChart.css";
