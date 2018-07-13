@@ -37,7 +37,8 @@ export default class DataViewContainer extends Component {
                     chartType={this.state.charType}
                 />
                 {
-                    this.state.charType === 'hexbin' ? <CountSlider onChange={_.debounce(this.onCountSliderChange,500)}/>: null
+                    this.state.charType === 'hexbin' ?
+                        <CountSlider value={this.state.minCount} onChange={_.debounce(this.onCountSliderChange,500)}/>: null
                 }
 
                 <RadioGroup onChange={this.onChartTypeChange} value={this.state.charType}>

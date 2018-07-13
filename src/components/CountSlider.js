@@ -3,13 +3,14 @@ import { Slider, InputNumber, Row, Col } from 'antd';
 
 export class CountSlider extends Component {
     state = {
-        value: 2
+        value: this.props.value
     }
 
     onCountSliderChange = (value) => {
         console.log("countslider:onchange");
-        this.setState({value});
-        this.props.onChange(value);
+        const cleanValue = Number(value) ? value : this.state.value;
+        this.setState({'value': cleanValue});
+        this.props.onChange(cleanValue);
     }
     render() {
         return (
@@ -23,7 +24,7 @@ export class CountSlider extends Component {
                         max={20}
                         style={{ marginLeft: 16 }}
                         value={this.state.value}
-                        onChange={this.onChange}
+                        onChange={this.onCountSliderChange}
                     />
                 </Col>
             </Row>
