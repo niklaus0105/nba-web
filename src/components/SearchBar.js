@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AutoComplete } from 'antd';
+import { AutoComplete, Icon, Input } from 'antd';
 import nba from 'nba';
 
 export class SearchBar extends Component {
@@ -13,6 +13,7 @@ export class SearchBar extends Component {
 
     onSelect = (value) => {
         console.log("onSelect "+value);
+        this.props.onSelect(value);
     }
 
     onSearch = (value) => {
@@ -27,11 +28,16 @@ export class SearchBar extends Component {
     render() {
         return (
             <AutoComplete
+                className="search-bar"
+                size="large"
                 dataSource={this.state.dataSource}
                 onSelect={this.onSelect}
                 onSearch={this.onSearch}
+
                 placeholder="Search NBA Player"
-            />
+            >
+                <Input suffix={<Icon type="search" />} />
+            </AutoComplete>
         );
     }
 }
