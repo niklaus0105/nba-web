@@ -8,7 +8,7 @@ export class CountSlider extends Component {
 
     onCountSliderChange = (value) => {
         console.log("countslider:onchange");
-        const cleanValue = Number(value) ? value : this.state.value;
+        const cleanValue = Number(value) ? Math.round(value) : this.state.value;
         this.setState({'value': cleanValue});
         this.props.onChange(cleanValue);
     }
